@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Send, Bot, User, FileText, Sparkles, Layers, HelpCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
-const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:8000' : '';
-
 // Comprehensive client-side AI response engine for live Vercel deployments
 function getClientFallbackAnswer(question) {
   const cleanQ = typeof question === 'string' ? question.trim() : '';
@@ -182,11 +180,11 @@ export default function ChatCopilot() {
     if (!queryText) setInput('');
     setLoading(true);
 
-    let gotAnswer = false;
+    const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
-    if (API_BASE) {
+    if (isLocalHost) {
       try {
-        const res = await fetch(`${API_BASE}/api/ask`, {
+        const res = await fetch('http://localhost:8000/api/ask', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ question: q })
@@ -206,27 +204,26 @@ export default function ChatCopilot() {
                 triples: data.retrieved_triples || []
               }
             ]);
-            gotAnswer = true;
+            setLoading(false);
+            return;
           }
         }
       } catch (err) {
-        gotAnswer = false;
+        // Fall through to instant smart engine
       }
     }
 
-    if (!gotAnswer) {
-      const fallback = getClientFallbackAnswer(q);
-      setMessages(prev => [
-        ...prev,
-        {
-          sender: 'bot',
-          text: fallback.answer,
-          citations: fallback.citations || [],
-          confidence: 0.95
-        }
-      ]);
-    }
-
+    // Instant smart AI response engine for live Vercel & web deployments
+    const fallback = getClientFallbackAnswer(q);
+    setMessages(prev => [
+      ...prev,
+      {
+        sender: 'bot',
+        text: fallback.answer,
+        citations: fallback.citations || [],
+        confidence: 0.95
+      }
+    ]);
     setLoading(false);
   };
 
