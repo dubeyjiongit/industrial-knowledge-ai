@@ -10,12 +10,18 @@ class RAGQueryEngine:
         clean_q = question.strip()
         lower_q = clean_q.lower()
 
-        # Detect conversational greetings / small talk
-        is_greeting = any(w in lower_q.split() for w in ["hi", "hello", "hey", "namaste", "greetings"]) or lower_q in ["hi", "hello", "hey"]
+        # Detect conversational greetings / small talk (catches hi, hii, hiiii, hello, helloo, hey, heyy, etc.)
+        greeting_pattern = r'\b(h[ia]+|he+l+o+|he+y+|namaste|greetings|good\s+(morning|afternoon|evening)|what\'?s\s+up)\b'
+        is_greeting = bool(re.search(greeting_pattern, lower_q))
         is_intro = any(phrase in lower_q for phrase in ["my name is", "i am", "i'm", "who are you", "what can you do", "help me"])
 
         if (is_greeting or is_intro) and len(clean_q.split()) < 10 and not any(code in clean_q.upper() for code in ["C-102", "PRV-88", "WO-", "IR-", "SOP-", "SP-"]):
-            answer_text = llm_provider.generate_text(prompt=clean_q)
+            answer_text = (
+                "Hello! 👋 Welcome to the **Unified Asset & Operations Brain**.\n\n"
+                "I am your Expert Industrial Knowledge Copilot for Northgate Refinery. "
+                "I can help you locate plant equipment, review maintenance logs, check Lead Engineer supervisions, or explain Emergency Shutdown (ESD) protocols.\n\n"
+                "How can I assist you today?"
+            )
             return {
                 "question": question,
                 "answer": answer_text,
