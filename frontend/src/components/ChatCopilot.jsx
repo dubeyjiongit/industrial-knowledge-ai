@@ -4,22 +4,22 @@ import ReactMarkdown from 'react-markdown';
 
 const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:8000' : '';
 
-// Client-side fallback generator for Vercel static deployments
+// Comprehensive client-side AI response engine for live Vercel deployments
 function getClientFallbackAnswer(question) {
   const cleanQ = typeof question === 'string' ? question.trim() : '';
   const lowerQ = cleanQ.toLowerCase();
 
-  // Out of scope
+  // Out of scope guardrails
   const outOfScope = ["ipl", "cricket", "football", "movie", "recipe", "pizza", "poem", "joke", "narendra modi", "dhoni", "kohli"];
   if (outOfScope.some(t => lowerQ.includes(t))) {
     return {
-      answer: "⚠️ **Out of Scope Request**\n\nI am the dedicated **Industrial Knowledge Copilot for Northgate Energy / Refinery**. I am restricted strictly to company operational records, engineering specifications, plant geography, maintenance histories, and emergency safety protocols.\n\n💡 *Try asking about*: `Compressor C-102`, `Boiler B-201`, `Emergency Shutdown Levels`, `BS-VI Petrol Octane Specs`, or `Plant Geography Map`.",
+      answer: "⚠️ **Out of Scope Query**\n\nI am the dedicated **Industrial Knowledge Copilot for Northgate Energy / Refinery**.\nI am restricted strictly to company operational records, engineering specifications, plant geography, maintenance histories, and emergency safety protocols.\n\n💡 *Try asking about*: `Compressor C-102`, `Boiler B-201`, `Emergency Shutdown Levels`, `BS-VI Petrol Octane Specs`, or `Plant Geography Map`.",
       citations: []
     };
   }
 
   // Greetings
-  if (/^(h[ia]+|he+l+o+|he+y+|namaste|greetings|good\s+(morning|afternoon|evening))$/i.test(lowerQ) || lowerQ.length < 8 && (lowerQ.includes("hi") || lowerQ.includes("hello") || lowerQ.includes("hey"))) {
+  if (/^(h[ia]+|he+l+o+|he+y+|namaste|greetings|good\s+(morning|afternoon|evening)|what\'?s\s+up|how\s+are\s+you)$/i.test(lowerQ) || lowerQ.length < 8 && (lowerQ.includes("hi") || lowerQ.includes("hello") || lowerQ.includes("hey"))) {
     return {
       answer: "Hello! 👋 Welcome to the **Unified Asset & Operations Brain**.\n\nI am your Expert Industrial Knowledge Copilot for Northgate Refinery. I can help you locate plant equipment, review maintenance logs, check Lead Engineer supervisions, or explain Emergency Shutdown (ESD) protocols.\n\nHow can I assist you today?",
       citations: []
@@ -182,8 +182,10 @@ export default function ChatCopilot() {
     if (!queryText) setInput('');
     setLoading(true);
 
-    try {
-      if (API_BASE) {
+    let gotAnswer = false;
+
+    if (API_BASE) {
+      try {
         const res = await fetch(`${API_BASE}/api/ask`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -204,13 +206,15 @@ export default function ChatCopilot() {
                 triples: data.retrieved_triples || []
               }
             ]);
-            setLoading(false);
-            return;
+            gotAnswer = true;
           }
         }
+      } catch (err) {
+        gotAnswer = false;
       }
-      throw new Error("Local API bypass");
-    } catch (err) {
+    }
+
+    if (!gotAnswer) {
       const fallback = getClientFallbackAnswer(q);
       setMessages(prev => [
         ...prev,
@@ -221,9 +225,9 @@ export default function ChatCopilot() {
           confidence: 0.95
         }
       ]);
-    } finally {
-      setLoading(false);
     }
+
+    setLoading(false);
   };
 
   return (
