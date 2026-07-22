@@ -6,6 +6,8 @@ import RcaAgent from './components/RcaAgent';
 import PlantMap from './components/PlantMap';
 import DocumentManager from './components/DocumentManager';
 
+const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:8000' : '';
+
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [stats, setStats] = useState(null);
@@ -13,7 +15,7 @@ export default function App() {
 
   const fetchStats = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/stats');
+      const res = await fetch(`${API_BASE}/api/stats`);
       const json = await res.json();
       if (json.status === 'success') {
         setStats(json.data);

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, Database, FileText, CheckCircle2, RefreshCw, GitFork, Layers } from 'lucide-react';
 
+const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:8000' : '';
+
 export default function DocumentManager({ stats, refreshStats }) {
   const [documents, setDocuments] = useState([]);
   const [entities, setEntities] = useState([]);
@@ -12,11 +14,11 @@ export default function DocumentManager({ stats, refreshStats }) {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const docRes = await fetch('http://localhost:8000/api/documents');
+      const docRes = await fetch(`${API_BASE}/api/documents`);
       const docJson = await docRes.json();
       if (docJson.status === 'success') setDocuments(docJson.data);
 
-      const entRes = await fetch('http://localhost:8000/api/entities');
+      const entRes = await fetch(`${API_BASE}/api/entities`);
       const entJson = await entRes.json();
       if (entJson.status === 'success') setEntities(entJson.data);
     } catch (err) {

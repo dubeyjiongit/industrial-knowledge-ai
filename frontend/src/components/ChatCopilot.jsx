@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Send, Bot, User, FileText, Sparkles, Layers, HelpCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
+const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:8000' : '';
+
 export default function ChatCopilot() {
   const [messages, setMessages] = useState([
     {
@@ -19,7 +21,6 @@ export default function ChatCopilot() {
   const lastMessageRef = useRef(null);
 
   useEffect(() => {
-    // Scroll to the TOP of the newest message card so the user reads from the beginning!
     if (lastMessageRef.current) {
       lastMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -49,7 +50,7 @@ export default function ChatCopilot() {
     setLoading(true);
 
     try {
-      const res = await fetch('http://localhost:8000/api/ask', {
+      const res = await fetch(`${API_BASE}/api/ask`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: q })
@@ -74,7 +75,7 @@ export default function ChatCopilot() {
         ...prev,
         {
           sender: 'bot',
-          text: '⚠️ Unable to connect to backend server. Make sure the FastAPI server is running on http://localhost:8000.',
+          text: '⚠️ Unable to connect to backend server. Make sure the server is running.',
           citations: []
         }
       ]);

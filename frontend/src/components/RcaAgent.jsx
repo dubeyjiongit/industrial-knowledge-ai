@@ -7,6 +7,8 @@ export default function RcaAgent({ selectedEquipment, setSelectedEquipment }) {
   const [loading, setLoading] = useState(false);
   const [rcaData, setRcaData] = useState(null);
 
+  const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:8000' : '';
+
   const availableEquipments = ['C-102', 'PRV-88', 'P-401B', 'T-101', 'EX-301'];
 
   const runAnalysis = async (targetId) => {
@@ -14,7 +16,7 @@ export default function RcaAgent({ selectedEquipment, setSelectedEquipment }) {
     if (!idToUse) return;
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/rca', {
+      const res = await fetch(`${API_BASE}/api/rca`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ equipment_id: idToUse })
