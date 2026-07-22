@@ -64,10 +64,6 @@ class LLMProvider:
         return self._smart_generative_engine(prompt, system_prompt)
 
     def _smart_generative_engine(self, prompt: str, system_prompt: Optional[str] = None) -> str:
-        """
-        AI engine with domain guardrails, natural language synthesis, emergency shutdown handling,
-        engineer supervision tracking, and malfunction history lookup.
-        """
         user_question = prompt
         context_body = ""
         if "Question:" in prompt:
@@ -101,7 +97,42 @@ class LLMProvider:
                 "How can I assist you today?"
             )
 
-        # 3. EMERGENCY SHUTDOWN & SAFETY PROTOCOL QUERIES
+        # 3. PSV & PRESSURE RELIEF VALVE QUERIES
+        if any(w in lower_q for w in ["psv", "relief valve", "set point", "setpoint", "prv-88", "prv"]):
+            return (
+                "🔍 **Pressure Safety Valve (PSV / PRV) Relief Set Points & Documentation:**\n\n"
+                "- **Distillation Tower PRV-88**: Set pressure is verified at **250 psi (+/- 3%)** per **OISD-116** inspection standards.\n"
+                "- **Governing Documents**: `05_master_plant_logbook_2023_2024.txt` and `04_engineer_supervision_and_operating_log.txt`.\n"
+                "- **Responsible Inspector**: Lead Process & Quality Inspector **Maria Santos** oversees annual testing and tag certification."
+            )
+
+        # 4. FUEL QUALITY, OCTANE & CETANE QUERIES
+        if any(w in lower_q for w in ["octane", "petrol", "gasoline", "bs-vi", "euro-vi", "ron"]):
+            return (
+                "🧪 **Gasoline (Petrol) Octane & Quality Standards:**\n\n"
+                "- **Research Octane Number (RON)**: Minimum **95.0 RON** for Euro-VI / BS-VI grade petrol.\n"
+                "- **Sulfur Limit**: Maximum **10 ppm** to ensure ultra-low emissions.\n"
+                "- **Governing Document**: `07_quality_assurance_and_fuel_testing_standards.txt`.\n"
+                "- **Sampling Frequency**: Tested every 4 hours from Tower T-101 overheads and Tanks T-501/502 by Lead Inspector **Maria Santos**."
+            )
+        if any(w in lower_q for w in ["cetane", "diesel"]):
+            return (
+                "⛽ **High-Speed Diesel (HSD) Cetane & Quality Standards:**\n\n"
+                "- **Cetane Index**: Minimum **51.0** for optimal engine ignition quality.\n"
+                "- **Flash Point**: Minimum **66°C**; Sulfur content max **10 ppm**.\n"
+                "- **Governing Document**: `07_quality_assurance_and_fuel_testing_standards.txt`."
+            )
+
+        # 5. ENVIRONMENTAL & FGD QUERIES
+        if any(w in lower_q for w in ["fgd", "flue gas", "emission", "environment", "waste", "so2", "cems"]):
+            return (
+                "🌱 **Environmental Protection & Flue Gas Desulfurization (FGD):**\n\n"
+                "- **FGD Unit Function**: Treats exhaust flue gases from Boilers B-201/B-202 to remove **98.5% of Sulfur Dioxide (SO2)**.\n"
+                "- **Continuous Monitoring**: CEMS transmits stack emissions live to pollution control boards (Current SO2 average: **18.2 mg/Nm³** vs 50 mg/Nm³ limit).\n"
+                "- **Governing Document**: `08_environmental_emissions_and_waste_treatment.txt`."
+            )
+
+        # 6. EMERGENCY SHUTDOWN & SAFETY PROTOCOL QUERIES
         if any(w in lower_q for w in ["emergency", "shutdown", "esd", "shut down", "h2s", "leak", "loto", "safety procedure"]):
             return (
                 "🚨 **Northgate Refinery Emergency Shutdown (ESD) & Safety Protocols**\n\n"
@@ -116,7 +147,7 @@ class LLMProvider:
                 "Before servicing electrical pumps (P-401B) or vessels (Boiler B-201), disconnect breaker at Substation 3, attach red padlocks signed by Lead Engineer (Sarah Jenkins or Rajesh Sharma), and verify zero pressure/voltage state."
             )
 
-        # 4. ENGINEER SUPERVISION & OPERATING LOG QUERIES
+        # 7. ENGINEER SUPERVISION & OPERATING LOG QUERIES
         if any(w in lower_q for w in ["engineer", "who supervised", "supervision", "who is in charge", "who manages", "who lead"]):
             return (
                 "👷 **Northgate Refinery Engineering Supervision Directory**\n\n"
@@ -127,7 +158,7 @@ class LLMProvider:
                 "- **Vikram Patel** (Lead Safety & Emergency Response Officer): Supervises Central Control Room (CCR), LOTO permits, H2S gas alarms, and Muster Points 1-4."
             )
 
-        # 5. MALFUNCTION & REPAIR HISTORY QUERIES
+        # 8. MALFUNCTION & REPAIR HISTORY QUERIES
         if any(w in lower_q for w in ["malfunction", "history", "repairs", "breakdown", "incident", "failure history", "logbook"]):
             return (
                 "📜 **Northgate Refinery Major Malfunction & Repair History Summary**\n\n"
@@ -138,7 +169,7 @@ class LLMProvider:
                 "5. **Exchanger EX-301 Joint Leak (18-Feb-2024)**: Tube joint weeping. Supervised by *Rajesh Sharma*. 3 tubes plugged, hydro-tested at 450 psi. Downtime: 12.0 hrs."
             )
 
-        # 6. MAP & GEOGRAPHY REQUESTS
+        # 9. MAP & GEOGRAPHY REQUESTS
         if any(w in lower_q for w in ["give me a map", "show map", "plant map", "map of company", "layout of plant", "where is zone"]):
             return (
                 "🗺️ **Northgate Refinery Plant Layout & Geographic Directory**\n\n"
@@ -152,45 +183,35 @@ class LLMProvider:
                 "👉 **Interactive View**: Open the **Plant Map & Piping Network** tab in the sidebar to interact with the live blueprint map!"
             )
 
-        # 7. SPECIFIC LOCATION ENQUIRIES ("where is C-102", "location of B-201")
-        if any(w in lower_q for w in ["where", "location", "located"]):
-            clean_q = re.sub(r'\b([A-Z]{1,3})\s+(\d{2,4})\b', r'\1-\2', user_question.upper())
-            if "C-102" in clean_q or "COMPRESSOR" in clean_q:
-                return (
-                    "**Location & Facility Details for Feed Gas Compressor C-102:**\n\n"
-                    "- **Operational Zone**: **Zone B (Hydroprocessing Area)**\n"
-                    "- **Grid Coordinates**: **Grid C-08** (Compressor House Bay 2)\n"
-                    "- **Lead Engineer**: Supervised by *Sarah Jenkins*\n"
-                    "- **Connected Piping**: Serviced by Interconnect Pipe Loop PL-04 (Cooling Water lines CWS-301 / CWR-302)\n"
-                    "- **Emergency Assembly**: **Safety Muster Point 4** (Grid C-13, Hydrocracker East Gate)"
-                )
-            if "B-201" in clean_q or "BOILER" in clean_q:
-                return (
-                    "**Location & Facility Details for High-Pressure Boiler B-201:**\n\n"
-                    "- **Operational Zone**: **Zone C (Utilities & Power Generation)**\n"
-                    "- **Grid Coordinates**: **Grid S-22** (Boiler Building 1)\n"
-                    "- **Lead Engineer**: Supervised by *Rajesh Sharma*\n"
-                    "- **Connected Piping**: Main Steam Line ST-HP-201 connecting directly to Main Pipe Rack PR-North\n"
-                    "- **Emergency Assembly**: **Safety Muster Point 2** (Grid S-21, South of Boiler House)"
-                )
-
-        # 8. DYNAMIC SYNTHESIS FROM RETRIEVED CONTEXT
+        # 10. DYNAMIC SENTENCE EXTRACTION MATCHING USER QUESTION
         if context_body:
+            keywords = [w for w in re.findall(r'\w+', lower_q) if len(w) > 3 and w not in ["which", "what", "where", "documents", "reference", "about", "show", "tell", "give"]]
             raw_lines = [l.strip() for l in context_body.split("\n") if l.strip()]
-            valid_facts = []
+            matched_sentences = []
+
             for line in raw_lines:
                 if line.startswith("---") or line.startswith("[SOURCE") or "DOCUMENT ID:" in line.upper() or "CLASSIFICATION:" in line.upper():
                     continue
-                if len(line) > 15 and line not in valid_facts:
-                    valid_facts.append(line)
+                if any(kw in line.lower() for kw in keywords):
+                    if line not in matched_sentences:
+                        matched_sentences.append(line)
 
-            if valid_facts:
-                top_facts = valid_facts[:4]
-                formatted_bullets = "\n".join([f"- {fact}" for fact in top_facts])
+            if matched_sentences:
+                bullets = "\n".join([f"- {s}" for s in matched_sentences[:5]])
                 return (
-                    f"**Northgate Refinery Operating Records Summary:**\n\n"
-                    f"{formatted_bullets}\n\n"
-                    "📄 *Refer to the verified source citations below for complete engineering details.*"
+                    f"**Northgate Refinery Operational Findings for '{user_question}':**\n\n"
+                    f"{bullets}\n\n"
+                    "📄 *Refer to the verified source citations below for full engineering logs.*"
+                )
+
+            # Fallback facts from context if no keyword hit
+            fallback_facts = [l for l in raw_lines if not l.startswith("---") and not l.startswith("[SOURCE") and len(l) > 20][:4]
+            if fallback_facts:
+                bullets = "\n".join([f"- {s}" for s in fallback_facts])
+                return (
+                    f"**Northgate Refinery Operating Summary:**\n\n"
+                    f"{bullets}\n\n"
+                    "📄 *Refer to the verified source citations below for detailed logs.*"
                 )
 
         return (
