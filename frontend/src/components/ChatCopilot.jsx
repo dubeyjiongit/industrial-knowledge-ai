@@ -6,7 +6,7 @@ const API_BASE = window.location.hostname === 'localhost' || window.location.hos
 
 // Client-side fallback generator for Vercel static deployments
 function getClientFallbackAnswer(question) {
-  const cleanQ = question.strip ? question.strip() : question;
+  const cleanQ = typeof question === 'string' ? question.trim() : '';
   const lowerQ = cleanQ.toLowerCase();
 
   // Out of scope
@@ -19,7 +19,7 @@ function getClientFallbackAnswer(question) {
   }
 
   // Greetings
-  if (/^(h[ia]+|he+l+o+|he+y+|namaste|greetings|good\s+(morning|afternoon|evening))$/i.test(lowerQ.trim()) || lowerQ.length < 8 && (lowerQ.includes("hi") || lowerQ.includes("hello") || lowerQ.includes("hey"))) {
+  if (/^(h[ia]+|he+l+o+|he+y+|namaste|greetings|good\s+(morning|afternoon|evening))$/i.test(lowerQ) || lowerQ.length < 8 && (lowerQ.includes("hi") || lowerQ.includes("hello") || lowerQ.includes("hey"))) {
     return {
       answer: "Hello! 👋 Welcome to the **Unified Asset & Operations Brain**.\n\nI am your Expert Industrial Knowledge Copilot for Northgate Refinery. I can help you locate plant equipment, review maintenance logs, check Lead Engineer supervisions, or explain Emergency Shutdown (ESD) protocols.\n\nHow can I assist you today?",
       citations: []
@@ -183,32 +183,34 @@ export default function ChatCopilot() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_BASE}/api/ask`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: q })
-      });
-      if (res.ok) {
-        const json = await res.json();
-        if (json.status === 'success') {
-          const data = json.data;
-          setMessages(prev => [
-            ...prev,
-            {
-              sender: 'bot',
-              text: data.answer,
-              citations: data.citations || [],
-              confidence: data.confidence,
-              chunks: data.retrieved_chunks || [],
-              triples: data.retrieved_triples || []
-            }
-          ]);
-          return;
+      if (API_BASE) {
+        const res = await fetch(`${API_BASE}/api/ask`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: q })
+        });
+        if (res.ok) {
+          const json = await res.json();
+          if (json.status === 'success') {
+            const data = json.data;
+            setMessages(prev => [
+              ...prev,
+              {
+                sender: 'bot',
+                text: data.answer,
+                citations: data.citations || [],
+                confidence: data.confidence,
+                chunks: data.retrieved_chunks || [],
+                triples: data.retrieved_triples || []
+              }
+            ]);
+            setLoading(false);
+            return;
+          }
         }
       }
-      throw new Error("Server response non-ok");
+      throw new Error("Local API bypass");
     } catch (err) {
-      // Seamless client-side intelligent fallback for Vercel static deployments
       const fallback = getClientFallbackAnswer(q);
       setMessages(prev => [
         ...prev,
