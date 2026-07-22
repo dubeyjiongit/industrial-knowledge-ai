@@ -1,0 +1,24 @@
+NORTHGATE REFINERY - LEAD ENGINEER SUPERVISION DIRECTORY
+Document ID: MASTER-ENGINEERS-04
+
+LEAD ENGINEERS & OPERATIONAL JURISDICTIONS:
+
+1. DR. ARIS THORNE - CHIEF RELIABILITY ENGINEER & SCADA DIRECTOR
+   - Responsibility: Plant-wide Reliability Intelligence, SCADA Integration, Automation & AI Systems.
+   - Approves: Overall plant risk scores, predictive maintenance schedules, and AI Knowledge Brain ingestion standards.
+
+2. SARAH JENKINS - LEAD MECHANICAL ENGINEER (ROTATING EQUIPMENT)
+   - Responsibility: Zone B (Compressor C-102) & Zone C (Boiler Feed Pumps P-401A/B, Reflux Pumps P-4B).
+   - Oversees: Laser alignment per SOP-PUMP-04, mechanical seal replacements, compressor valve overhauls, and vibration analysis.
+
+3. RAJESH SHARMA - LEAD THERMAL & UTILITIES ENGINEER
+   - Responsibility: Zone C Utilities (High-Pressure Boilers B-201, B-202, Water Plant WTP-01) & Zone E Heat Exchangers (EX-301, EX-302).
+   - Oversees: Superheated steam temperature control (480°C), boiler water chemistry sign-offs, soot blower maintenance, and furnace efficiency audits.
+
+4. MARIA SANTOS - LEAD PROCESS & QUALITY INSPECTION ENGINEER
+   - Responsibility: Zone A Crude Distillation (Tanks T-501 to T-503, Columns T-101, T-102) & Safety Relief Valves (PRV-88, PRV-201A/B).
+   - Oversees: Annual OISD-116 relief valve set pressure testing (250 psi), vessel wall thickness ultrasonic testing (UT), and product quality compliance.
+
+5. VIKRAM PATEL - LEAD SAFETY & EMERGENCY RESPONSE OFFICER
+   - Responsibility: Zone F (Central Control Room, Fire Station) & Safety Muster Points 1 to 4.
+   - Oversees: Lockout/Tagout (LOTO) safety permits, H2S gas detector calibrations (10 ppm low / 20 ppm high alarm), and Emergency Shutdown (ESD) drills.

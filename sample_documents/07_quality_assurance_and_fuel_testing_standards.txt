@@ -1,0 +1,25 @@
+NORTHGATE REFINERY - QUALITY ASSURANCE & FUEL TESTING STANDARDS
+Document ID: MASTER-QUALITY-07
+Location: Central Quality Control Laboratory (Building QL-01)
+
+FUEL SPECIFICATIONS & LABORATORY TESTING PROCEDURES:
+
+1. MOTOR SPIRIT / GASOLINE (PETROL) STANDARDS:
+   - Research Octane Number (RON): Minimum 95.0 RON for Euro-VI / BS-VI grade petrol.
+   - Sulfur Content: Maximum 10 ppm (parts per million) to ensure low emissions.
+   - Benzene Content: Maximum 1.0% by volume.
+   - Testing Frequency: Sampled every 4 hours from Distillation Column T-101 overhead stream and final storage tanks T-501/502.
+
+2. HIGH-SPEED DIESEL (HSD) STANDARDS:
+   - Cetane Index: Minimum 51.0 for engine ignition quality.
+   - Density at 15°C: 820 to 845 kg/m³.
+   - Flash Point: Minimum 66°C to prevent premature accidental ignition.
+   - Sulfur Content: Maximum 10 ppm after hydro-desulfurization (DHDS Unit).
+
+3. AVIATION TURBINE FUEL (ATF / JET FUEL) STANDARDS:
+   - Freeze Point: Maximum -47°C (ensures fuel does not freeze at high altitudes).
+   - Water Reaction & Micro-Separation: Must pass ASTM D3948 rating > 85.
+   - Supervised By: Quality Lead Inspector Maria Santos.
+
+4. OFF-SPEC PROTOCOL:
+   If fuel sample fails quality specs, automated valve AV-109 diverts stream to Slop Tank T-510 for re-processing.

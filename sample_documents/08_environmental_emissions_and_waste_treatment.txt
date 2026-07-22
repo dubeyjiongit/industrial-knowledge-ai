@@ -1,0 +1,18 @@
+NORTHGATE REFINERY - ENVIRONMENTAL EMISSIONS & WASTE TREATMENT
+Document ID: MASTER-ENV-08
+Compliance: CPCB (Central Pollution Control Board) & ISO 14001 Standards
+
+1. FLUE GAS DESULFURIZATION & EMISSION MONITORING:
+   - Flue Gas Desulfurization (FGD) Unit: Treats exhaust gases from Boilers B-201/B-202 to remove 98.5% of Sulfur Dioxide (SO2).
+   - Continuous Emission Monitoring Systems (CEMS): Transmits real-time stack emissions (SO2, NOx, Particulate Matter) directly to environmental regulators.
+   - Permissible SO2 Limit: Max 50 mg/Nm³. Current refinery average: 18.2 mg/Nm³.
+
+2. EFFLUENT TREATMENT PLANT (ETP-01):
+   - Capacity: 500 cubic meters per hour of industrial wastewater.
+   - Primary Treatment: Oil-Water Separators (API Separators) recover 99% of free oil.
+   - Secondary Biological Treatment: Aeration basins decompose dissolved organic compounds.
+   - Zero Liquid Discharge (ZLD): Treated water recycled to Cooling Towers CT-01/02.
+
+3. CARBON DECARBONIZATION & GREEN HYDROGEN GOALS:
+   - Target 2030: 15% reduction in refinery carbon intensity.
+   - Green Hydrogen Pilot: 5 MW electrolyzer unit under construction at Grid S-28 to replace 10% of fossil fuel hydrogen used in Hydrocracker Reactor R-201.

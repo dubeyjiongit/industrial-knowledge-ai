@@ -1,0 +1,57 @@
+NORTHGATE REFINERY - COMPREHENSIVE WORKING & PARTS GUIDE
+Document ID: MASTER-GUIDE-01
+Language: Plain English / Educational Overview
+
+1. WHAT IS AN OIL REFINERY? (IN SIMPLE TERMS)
+An Oil Refinery is a chemical factory that receives thick, black, raw Crude Oil from the ground and cleans, boils, separates, and transforms it into everyday fuels:
+- LPG (Liquefied Petroleum Gas): Household cooking gas.
+- Gasoline (Petrol): Fuel for cars and motorbikes.
+- Jet Fuel (Kerosene): Fuel for airplanes.
+- Diesel: Fuel for trucks, buses, and heavy machinery.
+- Heavy Fuel Oil: Fuel for cargo ships and power stations.
+- Asphalt / Bitumen: Heavy black tar used to pave roads.
+
+2. THE 7 MAIN SECTIONS & ALL ESSENTIAL PARTS OF THE REFINERY:
+
+SECTION 1: CRUDE OIL RECEIVING & STORAGE (TANK FARM)
+- What it does: Holds millions of liters of raw crude oil delivered by ships or pipelines.
+- Essential Parts:
+  * Storage Tanks T-501 to T-503: Large cylindrical steel tanks with floating roofs to prevent gas leaks.
+  * Booster Pumps P-101: Pumps crude oil out of storage into processing lines.
+
+SECTION 2: DESALTING & PRE-HEATING UNIT
+- What it does: Washes salt, sand, and water out of raw crude oil.
+- Why it is needed: Salt and water cause severe rust and corrosion inside steel pipes and boiling towers.
+- Essential Parts:
+  * Desalter Vessel DS-01: Uses high-voltage electric fields and fresh water injection to extract salt particles.
+
+SECTION 3: PRIMARY DISTILLATION (THE MAIN BOILING TOWER)
+- What it does: Boils crude oil at 370°C and separates it into different fuels based on boiling points.
+- Essential Parts:
+  * Pre-Heat Furnace F-101: Gas-fired oven that heats crude oil to boiling temperature.
+  * Distillation Tower T-101: 45-meter tall vertical tower containing metal trays. Lighter fuels (petrol, naphtha) rise to the top; heavy diesel and gasoil sink to the bottom.
+
+SECTION 4: VACUUM DISTILLATION (SECONDARY BOILING COLUMN)
+- What it does: Takes the thick residue at the bottom of Tower T-101 and boils it again under a vacuum (low pressure) to extract heavy vacuum gas oil without burning it.
+- Essential Parts:
+  * Vacuum Column T-102: Wide column operating under low pressure.
+  * Overhead Condenser EX-302: Cools vaporized vacuum gas oils into liquid fuel stock.
+
+SECTION 5: CONVERSION & CRACKING (HYDROCRACKER UNIT)
+- What it does: Takes cheap, heavy leftover oil and cracks (breaks) large molecules into valuable petrol and diesel using high heat, hydrogen gas, and heavy pressure.
+- Essential Parts:
+  * Feed Gas Compressor C-102: Motor-driven gas pump supplying high-pressure hydrogen to the reactor.
+  * Hydrocracker Reactor R-201: Heavy steel pressure vessel where chemical cracking occurs.
+
+SECTION 6: UTILITIES & POWER GENERATION (THE ENGINE OF THE PLANT)
+- What it does: Produces high-pressure steam, electricity, and cooling water to power all plant machines.
+- Essential Parts:
+  * High-Pressure Boilers B-201 & B-202: Steam generators producing superheated steam at 65 bar (480°C).
+  * Water Treatment Plant WTP-01: Purifies water so no scale builds up inside steam boilers.
+
+SECTION 7: INTERCONNECTING PIPE RACKS & EMERGENCY FLARE STACK
+- What it does: Moves oil, steam, and gas safely across the plant and burns off excess gas during emergencies.
+- Essential Parts:
+  * Main Pipe Rack PR-North: 850-meter elevated steel bridge carrying steam and fuel pipes.
+  * Flare Stack FL-01: 100-meter tall safety tower with a pilot flame at top to safely burn excess pressure gas.
+  * Safety Muster Points 1 to 4: Safe assembly areas where workers assemble during emergency alarms.

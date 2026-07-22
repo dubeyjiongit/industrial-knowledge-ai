@@ -1,0 +1,18 @@
+NORTHGATE REFINERY - SUPPLY CHAIN & PRODUCT DISPATCH LOGISTICS
+Document ID: MASTER-LOGISTICS-10
+Facility: Marine Terminal Jetty-01 & Rail/Truck Dispatch Gantry
+
+LOGISTICS & DISPATCH INFRASTRUCTURE:
+
+1. CRUDE OIL INCOMING SHIPMENTS:
+   - Marine Offloading Terminal Jetty-01: Accommodates Very Large Crude Carriers (VLCC) up to 300,000 DWT.
+   - Crude Pipeline Line CF-101: 36-inch diameter, 42 km cross-country pipeline pumping raw crude from Jetty-01 directly to Storage Tanks T-501, T-502, T-503 in Zone D.
+
+2. REFINED PRODUCT DISPATCH CHANNELS:
+   - Cross-Country Pipeline Network: Dispatches 60% of petrol and diesel to regional distribution depots.
+   - Rail Wagon Gantry (Gantry R-01): 48-wagon loading rack for bulk diesel and petrol train dispatches.
+   - Truck Loading Bay (Bay T-01 to T-08): Automated bottom-loading gantries handling 350 tank trucks per day.
+
+3. DISPATCH SECURITY & AUTOMATED WEIGHBRIDGE:
+   - Automated SCADA custody transfer meters verify exact liters dispatched per truck.
+   - Quality Certificate of Analysis (COA) issued by Quality Control Lab QL-01 attached to every bill of lading before gate release.

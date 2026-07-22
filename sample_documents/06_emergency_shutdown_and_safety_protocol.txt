@@ -1,0 +1,25 @@
+NORTHGATE REFINERY - EMERGENCY SHUTDOWN (ESD) & SAFETY PROTOCOLS
+Document ID: MASTER-SAFETY-06
+Compliance: OISD-GDN-115, OSHA 1910.119 Process Safety Management
+
+1. EMERGENCY SHUTDOWN LEVELS (ESD LEVELS 1 TO 3):
+
+   - ESD LEVEL 1: FULL PLANT EMERGENCY TRIP (Continuous 30-Second Alarm Siren)
+     * Action: Triggered automatically by major fire or SCADA system safety interlock. Main feed pumps P-101 stop. Fuel gas emergency trip valves ETV-201 close. Boilers B-201 and B-202 trip.
+     * Evacuation: All non-essential personnel immediately evacuate to designated Muster Points upwind.
+
+   - ESD LEVEL 2: UNIT ISOLATION SHUTDOWN (Intermittent Alarm Siren)
+     * Action: Triggered for localized equipment failure (e.g. Compressor C-102 gas leak or Boiler B-201 tube leak). Unit motor-operated valves (MOVs) isolate the affected zone (Zone B or Zone C) while keeping remaining refinery units idling.
+
+   - ESD LEVEL 3: CONTROLLED DEPRESSURIZATION VIA FLARE STACK FL-01
+     * Action: Automated blowdown valves open, diverting high-pressure gas from Hydrocracker Reactor R-201 and Tower T-101 into 30-inch Flare Header Line FL-901 leading to 100m Flare Stack FL-01 for safe smokeless combustion.
+
+2. TOXIC HYDROGEN SULFIDE (H2S) GAS LEAK EMERGENCY PROCEDURE:
+   - If H2S sensor reads >= 10 ppm (Low Alarm): Beeping amber beacon turns on. Personnel in Zone B must equip personal H2S monitors.
+   - If H2S sensor reads >= 20 ppm (High Alarm): Red flashing siren turns on. Personnel must immediately put on SCBA mask (Self-Contained Breathing Apparatus) available at Boiler House B-201 entrance or Compressor House C-102 control room and evacuate upwind to MUSTER POINT 4 (Grid C-13).
+
+3. LOCKOUT / TAGOUT (LOTO) SAFETY PERMIT RULES:
+   - Before performing maintenance on any electrical pump (e.g., P-401B) or vessel (e.g., Boiler B-201):
+     1. Disconnect main breaker at Substation 3.
+     2. Attach red LOTO safety padlock and tag signed by Lead Engineer (Sarah Jenkins or Rajesh Sharma).
+     3. Verify zero energy state (bleed pressure valves, check zero voltage) before starting work.

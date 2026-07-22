@@ -1,0 +1,20 @@
+NORTHGATE REFINERY - MASTER SHIFT LOGBOOK
+Document ID: MASTER-LOGBOOK-05
+Location: Central Control Room (CCR)
+
+SHIFT LOG SUMMARY & OPERATING RECORDS:
+
+- LOG DATE: 12-Mar-2023 | SHIFT B | OPERATOR: R. Singh | SUPERVISOR: Maria Santos
+  * Event: Annual pressure relief valve inspection for PRV-88 on Distillation Tower T-101. Set pressure verified at 250 psi (+/- 3%). Tag illegible - recommendation filed for re-stamping. Compliance: OISD-116 PASS. Next due: 12-Mar-2024.
+
+- LOG DATE: 14-Jul-2023 | SHIFT A | OPERATOR: K. Patel | SUPERVISOR: Sarah Jenkins
+  * Event: Feed Gas Compressor C-102 trip on high vibration. Technician M. Bora dispatched. Found worn valve plate (CV-2210) due to monsoon moisture ingress. Valve plate replaced, lube oil flushed. Restarted successfully at 16:30 hrs.
+
+- LOG DATE: 25-Sep-2023 | SHIFT C | OPERATOR: A. Sharma | SUPERVISOR: Sarah Jenkins
+  * Event: Reflux Pump P-4B seal weeping noted. Inspection IR-2023-114 filed. Traced to 0.4mm shaft misalignment dating back to Feb overhaul. Laser alignment re-verified per SOP-P4B-02 Rev 2.
+
+- LOG DATE: 15-Jan-2024 | SHIFT A | OPERATOR: V. Kumar | SUPERVISOR: Rajesh Sharma
+  * Event: Boiler B-201 annual UT thickness audit. Superheater bend 4 measured 5.8mm vs nominal 6.2mm. Deemed safe for continued operation at 65 bar. Re-inspection scheduled for Jan 2025.
+
+- LOG DATE: 10-May-2024 | SHIFT B | OPERATOR: R. Singh | SUPERVISOR: Vikram Patel
+  * Event: Quarterly H2S sensor calibration in Zone B (Grid C-08 near C-102). Low alarm verified at 10 ppm, High alarm verified at 20 ppm. All 4 SCBA breathing apparatus stations inspected & fully charged.

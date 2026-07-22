@@ -1,0 +1,36 @@
+NORTHGATE REFINERY - GEOGRAPHIC MAP & ZONE DIRECTORY
+Document ID: MASTER-MAP-02
+Location: Gujarat Industrial Corridor (GPS: 22.3072° N, 73.1812° E)
+
+PLANT MAP OPERATIONAL ZONES & GRID DIRECTORY:
+
+1. ZONE A: CRUDE PROCESSING AREA (North-West Sector, Grid N-12 to N-18)
+   - Distillation Column T-101 (Grid N-14): Main boiling tower.
+   - Vacuum Column T-102 (Grid N-16): Secondary low-pressure boiling tower.
+   - Desalter DS-01 (Grid N-12): Raw crude desalting vessel.
+
+2. ZONE B: HYDROPROCESSING AREA (Central Sector, Grid C-05 to C-12)
+   - Feed Gas Compressor C-102 (Grid C-08): Hydrogen gas compressor in Bay 2.
+   - Hydrocracker Reactor R-201 (Grid C-10): Conversion reactor vessel.
+   - Pressure Relief Valve PRV-88 (Grid C-06): Mounted on T-101 manifold at 14m height.
+
+3. ZONE C: UTILITIES & BOILER HOUSE (South-East Sector, Grid S-20 to S-26)
+   - High-Pressure Boiler B-201 (Grid S-22): 120 T/h 65-bar superheated steam boiler.
+   - High-Pressure Boiler B-202 (Grid S-24): Dual-fired standby utility boiler.
+   - Demin Water Plant WTP-01 (Grid S-20): Boiler feedwater purification plant.
+
+4. ZONE D: TANK FARM & STORAGE (South-West Sector, Grid SW-01 to SW-15)
+   - Crude Storage Tanks T-501, T-502, T-503 (Grid SW-02): Floating roof crude storage tanks.
+   - LPG Spheres S-101 to S-104 (Grid SW-12): Pressurized cooking gas storage spheres.
+
+5. ZONE E: PIPE RACK INTERCONNECT NETWORK (Arterial Corridor, Grid P-01 to P-30)
+   - Main Pipe Rack PR-North: 850m overhead steel pipe bridge carrying 65-bar steam (Line ST-HP-201).
+   - Pipe Rack PR-South: 620m pipe rack carrying Crude Feed Line CF-101.
+   - Interconnect Loop PL-04: Overhead bridge carrying cooling water lines CWS-301 / CWR-302.
+
+6. ZONE F: CONTROL & SAFETY CENTRE (Central Admin Grid CA-01)
+   - Central Control Room (CCR): Blast-resistant main control building.
+   - Muster Point 1 (Grid CA-05): Main Gate Assembly Plaza.
+   - Muster Point 2 (Grid S-21): Boiler House Assembly Point.
+   - Muster Point 3 (Grid SW-01): Tank Farm Assembly Point.
+   - Muster Point 4 (Grid C-13): Hydrocracker Assembly Point.

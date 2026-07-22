@@ -1,0 +1,40 @@
+NORTHGATE REFINERY - CHRONOLOGICAL MALFUNCTION & REPAIR HISTORY (2018 - 2024)
+Document ID: MASTER-HISTORY-03
+Facility: Northgate Refinery
+
+INCIDENT & REPAIR LOG:
+
+1. INCIDENT #MAL-2018-042 (Date: 14-May-2018)
+   - Equipment: High-Pressure Boiler B-201 (Zone C Utilities)
+   - Supervised By: Lead Thermal Engineer Rajesh Sharma
+   - Problem: High flue gas temperature (520°C) due to soot accumulation on superheater tubes.
+   - Action Taken: Boiler offline for 18 hours. Soot blowers serviced, tube bundle hydro-cleaned.
+   - Downtime: 18.0 hours. Status: Resolved.
+
+2. INCIDENT #MAL-2020-109 (Date: 22-Aug-2020)
+   - Equipment: Distillation Column T-101 (Zone A Crude Area)
+   - Supervised By: Lead Process Engineer Inspector Maria Santos
+   - Problem: Pressure differential spike across Tray 14 to Tray 20 causing liquid flooding.
+   - Action Taken: Column throughput reduced by 25%. Damaged bubble-cap tray replaced during shutdown.
+   - Downtime: 8.5 hours. Status: Resolved.
+
+3. INCIDENT #MAL-2022-074 (Date: 11-Nov-2022)
+   - Equipment: Boiler Feed Pump P-401B (Zone C)
+   - Supervised By: Lead Mechanical Engineer Sarah Jenkins
+   - Problem: Mechanical seal face cracking caused by dry running.
+   - Action Taken: Standby Pump P-401A auto-started with zero plant interruption. Mechanical seal MS-8840 replaced on P-401B.
+   - Downtime: 4.0 hours. Status: Resolved.
+
+4. INCIDENT #MAL-2023-0847 (Date: 14-Jul-2023)
+   - Equipment: Feed Gas Compressor C-102 (Zone B Hydrocracker)
+   - Supervised By: Lead Mechanical Engineer Sarah Jenkins & Tech M. Bora
+   - Problem: Severe knocking sound and discharge pressure drop (142 psi vs 155-165 psi spec) caused by monsoon moisture entering lube oil.
+   - Action Taken: Worn discharge valve plate replaced (Part# CV-2210). Lube oil flushed and refilled with synthetic ISO VG 46 oil.
+   - Downtime: 6.5 hours. Status: Resolved.
+
+5. INCIDENT #MAL-2024-012 (Date: 18-Feb-2024)
+   - Equipment: Heat Exchanger EX-301 (Zone E Loop PL-04)
+   - Supervised By: Lead Thermal Engineer Rajesh Sharma
+   - Problem: Tube-to-tubesheet joint weeping detected during NDT pressure monitoring.
+   - Action Taken: Exchanger isolated via bypass valves. 3 leaking tubes plugged with brass tapered plugs. Hydro-tested at 450 psi.
+   - Downtime: 12.0 hours. Status: Resolved.

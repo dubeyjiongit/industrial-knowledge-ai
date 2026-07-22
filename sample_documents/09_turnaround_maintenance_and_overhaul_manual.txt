@@ -1,0 +1,20 @@
+NORTHGATE REFINERY - MAJOR TURNAROUND MAINTENANCE MANUAL
+Document ID: MASTER-TURNAROUND-09
+Schedule: Quadrennial Shutdown (Every 4 Years)
+
+MAJOR TURNAROUND OVERHAUL PROCEDURES:
+
+1. REFINERY TURNAROUND OVERVIEW:
+   - Every 4 years, the entire refinery undergoes a planned 21-day total shutdown for thorough internal vessel inspection, cleaning, tube bundle retubing, and catalyst replacement.
+   - Last Turnaround Executed: October 2022 (Overhaul Code: TA-2022). Next Scheduled Turnaround: October 2026.
+
+2. CRITICAL OVERHAUL ACTIVITIES BY UNIT:
+   - Distillation Tower T-101: Internal inspection of all 45 trays. Ultrasonic thickness testing (UT) on shell walls. Replacement of corroded tray clamps.
+   - Hydrocracker Reactor R-201: Unloading spent cobalt-molybdenum catalyst. Internal vessel inspection for hydrogen blistering. Loading fresh high-activity catalyst.
+   - High-Pressure Boiler B-201: Hydro-testing steam drum at 97.5 bar (1.5x operating pressure). Re-tubing superheater coil bend 4.
+   - Feed Gas Compressor C-102: Complete rotor pullout, dynamic balancing, and replacement of main suction and discharge valve plates.
+
+3. SUPERVISION & PERMIT SIGN-OFFS:
+   - Lead Mechanical Engineer Sarah Jenkins signs off rotating equipment overhauls.
+   - Lead Thermal Engineer Rajesh Sharma signs off boiler hydro-test certifications.
+   - Chief Reliability Engineer Dr. Aris Thorne issues final plant re-commissioning permit.
